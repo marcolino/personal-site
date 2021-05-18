@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import projectJSLinesCount from './project-lines-count-js';
 
 /* Keys match keys returned by the github api. Fields without keys are
  * mostly jokes. To see everything returned by the github api, run:
@@ -38,11 +39,11 @@ const data = [
   {
     // TODO update this with a pre-commit hook
     /*
-      find . -type f | grep ".js" | grep -vE ".min.js|node_modules|.git|.json" |
+      find . -type f | fgrep ".js" | grep -vE ".min.js|node_modules|.git|.json" |
       xargs -I file cat file | wc -l
     */
     label: 'Lines of Javascript powering this website',
-    value: '1991',
+    value: projectJSLinesCount,
     link: 'https://github.com/marcolino/personal-site/graphs/contributors',
   },
 ];
