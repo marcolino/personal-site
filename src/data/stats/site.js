@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import projectJSLinesCount from './project-lines-count-js';
+import projectLinesCount from './project-lines-count';
 
 /* Keys match keys returned by the github api. Fields without keys are
  * mostly jokes. To see everything returned by the github api, run:
@@ -43,7 +43,7 @@ const data = [
       xargs -I file cat file | wc -l
     */
     label: 'Lines of Javascript powering this website',
-    value: projectJSLinesCount,
+    value: projectLinesCount,
     link: 'https://github.com/marcolino/personal-site/graphs/contributors',
   },
 ];
