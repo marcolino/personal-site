@@ -1,7 +1,12 @@
+const {
+  REACT_APP_MY_NAME,
+  REACT_APP_MY_SURNAME,
+} = process.env;
+
 const routes = [
   {
     index: true,
-    label: "Michael D'Angelo",
+    label: `${REACT_APP_MY_NAME} ${REACT_APP_MY_SURNAME}`,
     path: '/',
   },
   {

@@ -7,11 +7,13 @@ import Navigation from '../components/Template/Navigation';
 import SideBar from '../components/Template/SideBar';
 import ScrollToTop from '../components/Template/ScrollToTop';
 
+const { REACT_APP_MY_NAME, REACT_APP_MY_SURNAME } = process.env;
+
 const Main = (props) => (
   <HelmetProvider>
     <Analytics />
     <ScrollToTop />
-    <Helmet titleTemplate="%s | Michael D'Angelo" defaultTitle="Michael D'Angelo">
+    <Helmet titleTemplate={`%s | ${REACT_APP_MY_NAME} ${REACT_APP_MY_SURNAME}`} defaultTitle={`${REACT_APP_MY_NAME} ${REACT_APP_MY_SURNAME}`}>
       {props.title && <title>{props.title}</title>}
       <meta name="description" content={props.description} />
     </Helmet>
@@ -39,7 +41,7 @@ Main.defaultProps = {
   children: null,
   fullPage: false,
   title: null,
-  description: "Michael D'Angelo's personal website.",
+  description: `${REACT_APP_MY_NAME} ${REACT_APP_MY_SURNAME} personal website.`,
 };
 
 export default Main;

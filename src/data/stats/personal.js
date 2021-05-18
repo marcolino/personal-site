@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 const Age = () => {
   const [age, setAge] = useState();
+  const { REACT_APP_MY_DOB } = process.env;
 
   const tick = () => {
     const divisor = 1000 * 60 * 60 * 24 * 365.2421897; // ms in an average year
-    const birthTime = new Date('1990-02-05T09:24:00');
+    const birthTime = new Date(`${REACT_APP_MY_DOB}`);
     setAge(((Date.now() - birthTime) / divisor).toFixed(11));
   };
 
@@ -27,14 +28,14 @@ const data = [
   {
     key: 'countries',
     label: 'Countries visited',
-    value: 53,
-    link:
-      'https://www.google.com/maps/d/embed?mid=1iBBTscqateQ93pWFVfHCUZXoDu8&z=2',
+    value: '29+',
+    // link: 'https://www.google.com/maps/d/u/0/embed?mid=1d2vKAh-tPA_816vL_mCKEhndRKmAClWN&ll=11.035653424967638%2C18.824795899107897&z=3',
+    link: 'https://www.google.com/maps/d/u/0/embed?mid=1d2vKAh-tPA_816vL_mCKEhndRKmAClWN&usp=sharing&ll=11.035653424967638%2C18.824795899107897&z=3',
   },
   {
     key: 'location',
     label: 'Current city',
-    value: 'New York, NY',
+    value: 'Torino, Italy',
   },
 ];
 
