@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Main from './layouts/Main'; // fallback for lazy pages
-import './static/css/main.scss'; // All of our styles
+import { withNamespaces } from 'react-i18next'; // the HOC
+import './static/css/main.scss'; // all of our styles
 
 const { PUBLIC_URL } = process.env;
 
@@ -18,7 +18,7 @@ const Stats = lazy(() => import('./pages/Stats'));
 
 const App = () => (
   <BrowserRouter basename={PUBLIC_URL}>
-    <Suspense fallback={<Main />}>
+    <Suspense fallback={<h1>Loading...</h1>}>
       <Switch>
         <Route exact path="/" component={Index} />
         <Route path="/about" component={About} />
@@ -32,4 +32,5 @@ const App = () => (
   </BrowserRouter>
 );
 
-export default App;
+// export default App;
+export default withNamespaces()(App);

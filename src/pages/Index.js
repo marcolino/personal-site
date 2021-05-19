@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withI18n } from 'react-i18next';
 import { Link } from 'react-router-dom';
-
 import Main from '../layouts/Main';
 
-const Index = () => (
+const Index = ({ t }) => (
   <Main
     description={"Michael D'Angelo's personal website. New York based Stanford ICME graduate, "
     + 'co-founder and CTO of Arthena, and YC Alumni.'}
@@ -18,6 +19,7 @@ const Index = () => (
           </p>
         </div>
       </header>
+      <h1>{t('Welcome')}</h1>
       <p> Welcome to my website. Please feel free to read more <Link to="/about">about me</Link>,
         or you can check out my {' '}
         <Link to="/resume">resume</Link>, {' '}
@@ -30,4 +32,9 @@ const Index = () => (
   </Main>
 );
 
-export default Index;
+Index.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+// export default Index;
+export default withI18n()(Index);

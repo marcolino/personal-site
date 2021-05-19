@@ -1,5 +1,18 @@
 import dayjs from 'dayjs';
-import projectLinesCount from './project-lines-count';
+import projectLinesCount from './project-lines-count'; // from pre-commit hook
+
+const language = 'it'; // TODO: use i18next
+
+const upperCaseWordsInitials = (str) => str.split(' ').map((word) => word[0].toUpperCase() + word.substring(1)).join(' ');
+const formatDate = (datestring) => {
+  const date = new Date(datestring);
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  return upperCaseWordsInitials(date.toLocaleDateString(language, options));
+};
 
 /* Keys match keys returned by the github api. Fields without keys are
  * mostly jokes. To see everything returned by the github api, run:
@@ -34,14 +47,9 @@ const data = [
     label: 'Last updated at',
     key: 'pushed_at',
     link: 'https://github.com/marcolino/personal-site/commits',
-    format: (x) => dayjs(x).format('MMMM DD, YYYY'),
+    format: (x) => formatDate(dayjs(x), language),
   },
   {
-    // TODO update this with a pre-commit hook
-    /*
-      find . -type f | fgrep ".js" | grep -vE ".min.js|node_modules|.git|.json" |
-      xargs -I file cat file | wc -l
-    */
     label: 'Lines of Javascript powering this website',
     value: projectLinesCount,
     link: 'https://github.com/marcolino/personal-site/graphs/contributors',
