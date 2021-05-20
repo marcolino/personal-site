@@ -1,4 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
+import { withI18n } from 'react-i18next';
+
+const {
+  REACT_APP_MY_DOMAIN,
+} = process.env;
 
 // Validates the first half of an email address.
 const validateText = (text) => {
@@ -7,24 +13,6 @@ const validateText = (text) => {
   const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))$/;
   return re.test(text) || text.length === 0;
 };
-
-const messages = [
-  'hi',
-  'hello',
-  'hola',
-  'you-can-email-me-at-literally-anything! Really',
-  'well, not anything. But most things',
-  'like-this',
-  'or-this',
-  'but not this :(  ',
-  'you.can.also.email.me.with.specific.topics.like',
-  'just-saying-hi',
-  'please-work-for-us',
-  'help',
-  'admin',
-  'or-I-really-like-your-website',
-  'thanks',
-];
 
 const useInterval = (callback, delay) => {
   const savedCallback = useRef();
@@ -44,7 +32,28 @@ const useInterval = (callback, delay) => {
   }, [delay]);
 };
 
-const EmailLink = () => {
+const EmailLink = ({ t }) => {
+  const messages = [
+    t('hello'),
+    'hello',
+    t('mail'),
+    'mail',
+    'info',
+    'hello',
+    'hola',
+    'you-can-email-me-at-literally-anything! Really',
+    'well, not anything. But most things',
+    'like-this',
+    'or-this',
+    'but not this :(  ',
+    'you.can.also.email.me.with.specific.topics.like',
+    'just-saying-hi',
+    'please-work-for-us',
+    'help',
+    'admin',
+    'or-I-really-like-your-website',
+    'thanks',
+  ];
   const hold = 50; // ticks to wait after message is complete before rendering next message
   const delay = 50; // tick length in mS
 
@@ -72,16 +81,20 @@ const EmailLink = () => {
   return (
     <div
       className="inline-container"
-      style={validateText(message) ? {} : { color: 'red' }}
+      style={validateText(message) ? {} : { color: 'darkred' }}
       onMouseEnter={() => setIsActive(false)}
       onMouseLeave={() => (idx < messages.length) && setIsActive(true)}
     >
-      <a href={validateText(message) ? `mailto:${message}@mldangelo.com` : ''}>
+      <a href={validateText(message) ? `mailto:${message}@${REACT_APP_MY_DOMAIN}` : ''}>
         <span>{message}</span>
-        <span>@mldangelo.com</span>
+        <span>@{REACT_APP_MY_DOMAIN}</span>
       </a>
     </div>
   );
 };
 
-export default EmailLink;
+EmailLink.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+export default withI18n()(EmailLink);

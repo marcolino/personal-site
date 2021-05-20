@@ -12,22 +12,21 @@ const Index = ({ t }) => (
     <article className="post" id="index">
       <header>
         <div className="title">
-          <h2 data-testid="heading"><Link to="/">About this site</Link></h2>
+          <h2 data-testid="heading"><Link to="/">{t('About this site')}</Link></h2>
           <p>
-            A beautiful, responsive, statically-generated,
-            react application written with modern Javascript.
+            {t('A beautiful, responsive, statically-generated, react application written with modern Javascript')}.
           </p>
         </div>
       </header>
       <h1>{t('Welcome')}</h1>
-      <p> Welcome to my website. Please feel free to read more <Link to="/about">about me</Link>,
-        or you can check out my {' '}
-        <Link to="/resume">resume</Link>, {' '}
-        <Link to="/projects">projects</Link>, {' '}
-        view <Link to="/stats">site statistics</Link>, {' '}
-        or <Link to="/contact">contact</Link> me.
+      <p>{t('Welcome to my website')}. {t('Please feel free to read more')} <Link to="/about">{t('about me')}</Link>,
+        {t('or you can check out my')} {' '}
+        <Link to="/resume">{t('resume')}</Link>, {' '}
+        <Link to="/projects">{t('projects')}</Link>, {' '}
+        view <Link to="/stats">{t('site statistics')}</Link>, {' '}
+        or <Link to="/contact">{t('contact')}</Link> {t('me')}.
       </p>
-      <p> Source available <a href="https://github.com/mldangelo/personal-site">here</a>.</p>
+      <p>{t('Source available')} <a href="https://github.com/marcolino/personal-site">{t('here')}</a>.</p>
     </article>
   </Main>
 );

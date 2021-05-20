@@ -28,7 +28,7 @@ const data = [
   {
     key: 'countries',
     label: 'Countries visited',
-    value: '29+',
+    value: '29+ 🌎',
     // link: 'https://www.google.com/maps/d/u/0/embed?mid=1d2vKAh-tPA_816vL_mCKEhndRKmAClWN&ll=11.035653424967638%2C18.824795899107897&z=3',
     link: 'https://www.google.com/maps/d/u/0/embed?mid=1d2vKAh-tPA_816vL_mCKEhndRKmAClWN&usp=sharing&ll=11.035653424967638%2C18.824795899107897&z=3',
   },

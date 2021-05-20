@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withI18n } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import i18n from '../../i18n';
 
 import ContactIcons from '../Contact/ContactIcons';
 
-// const { PUBLIC_URL } = process.env; // set automatically from package.json:homepage
 const {
   PUBLIC_URL, // set automatically from package.json:homepage
   REACT_APP_MY_NAME,
@@ -12,7 +14,11 @@ const {
   REACT_APP_MY_DOMAIN,
 } = process.env;
 
-const SideBar = () => (
+const changeLanguage = (lng) => {
+  i18n.changeLanguage(lng);
+};
+
+const SideBar = ({ t }) => (
   <section id="sidebar">
     <section id="intro">
       <Link to="/" className="logo">
@@ -29,31 +35,65 @@ const SideBar = () => (
     </section>
 
     <section className="blurb">
-      <h2>About</h2>
-      <p>Hi, I&apos;m Marco. I like building things.
+      <h2>{t('About')}</h2>
+      <p>{t('Hi, I\'m NAME', { name: REACT_APP_MY_NAME })}. {t('I like building things')}.
         <br />
-        I am a full-stack developer, analyst and systemist.
+        {t('I am a full-stack developer, analyst and systemist')}.
         <br />
-        Currenty I work at <a href="https://mypass.company">MyPass</a>.
-        Previously I was at Koinè Sistemi.
-        I was also employed at Centro Ricerche RAI in Torino and
-        , when starting my work career, I did collaborate with Micromegas in Pisa.
+        {t('Currenty I work at')} <a href="https://mypass.company">MyPass</a>.
         <br />
-        I love running, playing football, sailing, bird-watching.
-        I also like cinema and reading paper books.
+        {t('Previously I was at')} Koinè Sistemi.
+        &nbsp;
+        {t('I was also employed at')} Centro Ricerche RAI in Torino {t('and')},
+        &nbsp;
+        {t('when starting my work career')}, {t('I did collaborate with')} Micromegas in Pisa.
+        <br />
+        {t('I love running, playing football, sailing, snorkeling, bird-watching, cinema and reading paper books')}.
+        <br />
+        {t('I love with my whole heart a woman')}.
+        &nbsp;
+        {t('She does not love me anymore, but I am fighting to conquer her soul again')}.
       </p>
       <ul className="actions">
         <li>
-          {!window.location.pathname.includes('/resume') ? <Link to="/resume" className="button">Learn More</Link> : <Link to="/about" className="button">About Me</Link>}
+          {!window.location.pathname.includes('/resume') ? <Link to="/resume" className="button">{t('Learn More')}</Link> : <Link to="/about" className="button">{t('About Me')}</Link>}
         </li>
       </ul>
     </section>
 
     <section id="footer">
       <ContactIcons />
-      <p className="copyright">&copy; {`${REACT_APP_MY_NAME} ${REACT_APP_MY_SURNAME}`} <Link to="/">{`${REACT_APP_MY_DOMAIN}`}</Link>.</p>
+      <p className="copyright">
+        <button
+          type="button"
+          style={{
+            fontSize: 13, padding: 0, height: 0,
+          }}
+          alt="use italian language"
+          onClick={() => changeLanguage('it')}
+        >
+          🇮🇹
+        </button>
+        &nbsp;
+        <button
+          type="button"
+          style={{
+            fontSize: 13, padding: 0, height: 0,
+          }}
+          alt="use english language"
+          onClick={() => changeLanguage('en')}
+        >
+          🇬🇧
+        </button>
+        &emsp;
+        &copy; {`${REACT_APP_MY_NAME} ${REACT_APP_MY_SURNAME}`} <Link to="/">{`${REACT_APP_MY_DOMAIN}`}</Link>.
+      </p>
     </section>
   </section>
 );
 
-export default SideBar;
+SideBar.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+export default withI18n()(SideBar);
