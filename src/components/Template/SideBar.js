@@ -75,7 +75,7 @@ const SideBar = ({ t }) => (
         >
           🇮🇹
         </button>
-        &nbsp;
+        {' '}
         <button
           type="button"
           style={{
@@ -87,7 +87,6 @@ const SideBar = ({ t }) => (
           🇬🇧
         </button>
         {' '}
-        {i18n.language}
         &copy; {`${REACT_APP_MY_NAME} ${REACT_APP_MY_SURNAME}`} ~ <Link to="/">{`${REACT_APP_MY_DOMAIN}`}</Link>.
       </p>
     </section>
