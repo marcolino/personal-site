@@ -23,7 +23,7 @@ const obfuscateEmail = (email) => {
 const Contact = ({ t }) => (
   <Main
     title={t('Contact')}
-    description={t('Contact NAME SURNAME via email EMAIL', { name: REACT_APP_MY_NAME, surname: REACT_APP_MY_SURNAME, email: obfuscateEmail(REACT_APP_MY_EMAIL) })}
+    description={t('Contact {{name}} {{surname}} via email {{email}}', { name: REACT_APP_MY_NAME, surname: REACT_APP_MY_SURNAME, email: obfuscateEmail(REACT_APP_MY_EMAIL) })}
   >
     <article className="post" id="contact">
       <header>

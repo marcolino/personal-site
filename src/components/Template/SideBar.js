@@ -36,22 +36,23 @@ const SideBar = ({ t }) => (
 
     <section className="blurb">
       <h2>{t('About')}</h2>
-      <p>{t('Hi, I\'m NAME', { name: REACT_APP_MY_NAME })}. {t('I like building things')}.
+      <p>{t('Hi, I\'m {{name}}', { name: REACT_APP_MY_NAME })}. {t('I like building things')}.
         <br />
         {t('I am a full-stack developer, analyst and systemist')}.
         <br />
-        {t('Currenty I work at')} <a href="https://mypass.company">MyPass</a>.
+        {t('Currenty I work at')} <a href="https://mypass.company">MyPass</a>, {' '}
+        {t('a young and dynamic start-up company active in e-ticketing and e-reservation services')}.
         <br />
         {t('Previously I was at')} Koinè Sistemi.
-        &nbsp;
+        {' '}
         {t('I was also employed at')} Centro Ricerche RAI in Torino {t('and')},
-        &nbsp;
-        {t('when starting my work career')}, {t('I did collaborate with')} Micromegas in Pisa.
+        {' '}
+        {t('when starting my work career')}, {t('I did collaborate with')} Micromegas {t('in Pisa')}.
         <br />
         {t('I love running, playing football, sailing, snorkeling, bird-watching, cinema and reading paper books')}.
         <br />
         {t('I love with my whole heart a woman')}.
-        &nbsp;
+        {' '}
         {t('She does not love me anymore, but I am fighting to conquer her soul again')}.
       </p>
       <ul className="actions">
@@ -67,7 +68,7 @@ const SideBar = ({ t }) => (
         <button
           type="button"
           style={{
-            fontSize: 13, padding: 0, height: 0,
+            fontSize: 13, padding: 0, height: 0, opacity: 0.66,
           }}
           alt="use italian language"
           onClick={() => changeLanguage('it')}
@@ -78,15 +79,16 @@ const SideBar = ({ t }) => (
         <button
           type="button"
           style={{
-            fontSize: 13, padding: 0, height: 0,
+            fontSize: 13, padding: 0, height: 0, opacity: 0.66,
           }}
           alt="use english language"
           onClick={() => changeLanguage('en')}
         >
           🇬🇧
         </button>
-        &emsp;
-        &copy; {`${REACT_APP_MY_NAME} ${REACT_APP_MY_SURNAME}`} <Link to="/">{`${REACT_APP_MY_DOMAIN}`}</Link>.
+        {' '}
+        {i18n.language}
+        &copy; {`${REACT_APP_MY_NAME} ${REACT_APP_MY_SURNAME}`} ~ <Link to="/">{`${REACT_APP_MY_DOMAIN}`}</Link>.
       </p>
     </section>
   </section>

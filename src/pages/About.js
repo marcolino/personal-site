@@ -36,13 +36,13 @@ const LinkRenderer = ({ ...children }) => <Link {...children} />;
 const About = ({ t }) => (
   <Main
     title={t('About')}
-    description={t('Learn about NAME SURNAME', { name: REACT_APP_MY_NAME, surname: REACT_APP_MY_SURNAME })}
+    description={t('Learn about {{name}} {{surname}}', { name: REACT_APP_MY_NAME, surname: REACT_APP_MY_SURNAME })}
   >
     <article className="post markdown" id="about">
       <header>
         <div className="title">
           <h2 data-testid="heading"><Link to="/about">{t('About Me')}</Link></h2>
-          <p>({t('in about COUNT words', { count: countAbout })})</p>
+          <p>({t('in about {{count}} words', { count: countAbout })})</p>
         </div>
       </header>
       <ReactMarkdown
