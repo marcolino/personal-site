@@ -1,15 +1,9 @@
 const degrees = [
   {
-    school: 'Stanford University',
-    degree: 'M.S. Computational and Mathematical Engineering',
-    link: 'https://stanford.edu',
-    year: 2016,
-  },
-  {
-    school: 'University at Buffalo',
-    degree: 'B.S. Electrical Engineering, Computer Engineering',
-    link: 'https://buffalo.edu',
-    year: 2012,
+    school: 'Liceo A. Pacinotti a La Spezia',
+    degree: 'Diploma Scientifico',
+    link: 'https://www.liceopacinotti.edu.it',
+    year: 1979,
   },
 ];
 
