@@ -1,6 +1,6 @@
 {
   "name": "personal-site",
-  "version": "4.0.20",
+  "version": "4.0.21",
   "homepage": "https://sistemisolari.com/",
   "license": "MIT",
   "repository": {
@@ -40,7 +40,6 @@
     "react-ga": "^3.3.0",
     "react-helmet-async": "^1.0.7",
     "react-i18next": "^9.0.10",
-    "react-lazy-no-flicker": "^1.0.2",
     "react-markdown": "^5.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
