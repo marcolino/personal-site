@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { t } from '../../i18n';
 import projectLinesCount from './project-lines-count'; // from pre-commit hook
 
 const language = 'it'; // TODO: use i18next
@@ -20,37 +21,39 @@ const formatDate = (datestring) => {
  */
 const data = [
   {
-    label: 'Stars this repository has on github',
     key: 'stargazers_count',
+    label: t('Stars this repository has on github'),
     link: 'https://github.com/marcolino/personal-site/stargazers',
   },
   {
-    label: 'Number of people watching this repository',
     key: 'subscribers_count',
+    label: t('Number of people watching this repository'),
     link: 'https://github.com/marcolino/personal-site/stargazers',
   },
   {
-    label: 'Number of forks',
     key: 'forks',
+    label: t('Number of forks'),
     link: 'https://github.com/marcolino/personal-site/network',
   },
   {
-    label: 'Number of linter warnings',
+    key: 'linter_warnings_count',
+    label: t('Number of linter warnings'),
     value: '0', // enforced via github workflow
   },
   {
-    label: 'Open github issues',
     key: 'open_issues_count',
+    label: t('Open github issues'),
     link: 'https://github.com/marcolino/personal-site/issues',
   },
   {
-    label: 'Last updated at',
     key: 'pushed_at',
+    label: t('Last updated at'),
     link: 'https://github.com/marcolino/personal-site/commits',
     format: (x) => formatDate(dayjs(x), language),
   },
   {
-    label: 'Lines of Javascript powering this website',
+    key: 'project_lines_count',
+    label: t('Lines of Javascript powering this website'),
     value: projectLinesCount,
     link: 'https://github.com/marcolino/personal-site/graphs/contributors',
   },

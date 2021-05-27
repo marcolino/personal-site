@@ -1,7 +1,9 @@
+import { t } from '../../i18n';
+
 const degrees = [
   {
-    school: 'Liceo A. Pacinotti a La Spezia',
-    degree: 'Diploma Scientifico',
+    school: t('Liceo A. Pacinotti in La Spezia'),
+    degree: t('Scientific high school graduation'),
     link: 'https://www.liceopacinotti.edu.it',
     year: 1979,
   },

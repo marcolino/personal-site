@@ -15,7 +15,7 @@ for outputFile in "${localesFolder}/"*"/${localeFile}"; do
   if [ "$outputFile" = "${localesFolder}/${baseLocale}/${localeFile}" ]; then
     continue # skip base locale file
   fi
-  i18next "$sourcesPattern" --output "$outputFile" --config "$i18nextConfigFile" --fail-on-warnings --silent >/dev/null # extract strings to be localized from source files
+  i18next "$sourcesPattern" --output "$outputFile" --config "$i18nextConfigFile" --silent >/dev/null # --fail-on-warnings # extract strings to be localized from source files
   sed -i -e '/^[{}]$/d' "$outputFile" # remove curl braces before sorting
   sed -i -e 's/,$//' "$outputFile" # remove trailing commas before sorting
   sort "$outputFile" -o "$tmpFile1" # sort

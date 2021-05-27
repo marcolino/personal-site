@@ -60,5 +60,4 @@ About.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-// export default About;
 export default withI18n()(About);

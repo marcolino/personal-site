@@ -11,13 +11,34 @@
 			color: _palette(fg-light);
 		}
 
+		li.languages {
+			margin: 0;
+			padding: 3px;
+		}
+
+		.onerow {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			font-size: 0.75em;
+			opacity: 0.55;
+		}
+
+		.languages-flag {
+			margin: 0;
+			padding: 0;
+		}
+
 		.copyright {
 			color: _palette(fg-not-so-light);
 			font-family: _font(family-heading);
-			font-size: 0.6em;
+			font-size: 0.75em;
 			font-weight: _font(weight-heading);
 			letter-spacing: _font(kerning-heading);
 			text-transform: uppercase;
+			padding-top: 7px;
 		}
 
 		body.single & {

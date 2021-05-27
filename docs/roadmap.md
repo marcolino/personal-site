@@ -28,6 +28,10 @@ This site has been a work in progress since 2014. I have tried to make updates t
 - revisit posts/blog
   - put one or two examples up from my knowledge base.
 
+- put all images in one folder, if possible (now we have /src/static/images/ and /public/images/)
+- review home page structure ("About this web site" in the first foreground?)
+- make a script to build icons (icon.png => favicon.ico, apple-touch-icon.png, icon-192.png, icon-512.png, icon.svg)
+
 ### Repository Cleanup
 
 - Don't allow pushes to main.

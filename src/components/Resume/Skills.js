@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { t } from '../../i18n';
 import CategoryButton from './Skills/CategoryButton';
 import SkillBar from './Skills/SkillBar';
 
@@ -46,7 +47,7 @@ class Skills extends Component {
   getButtons() {
     return Object.keys(this.state.buttons).map((key) => (
       <CategoryButton
-        label={key}
+        label={key === 'All' ? t('All') : key}
         key={key}
         active={this.state.buttons}
         handleClick={this.handleChildClick}
@@ -72,9 +73,13 @@ class Skills extends Component {
       <div className="skills">
         <div className="link-to" id="skills" />
         <div className="title">
-          <h3>Skills</h3>
-          <p>Note: I think these sections are silly, but everyone seems to have one.
-            Here is a *mostly* honest overview of my skills.
+          <h3>
+            {t('Skills')}
+          </h3>
+          <p>
+            <i>{t('Note')}: {t('I think these sections are silly, but everyone seems to have one')}.</i>
+            <br />
+            {t('Here is a *mostly* honest overview of my skills')}.
           </p>
         </div>
         <div className="skill-button-container">

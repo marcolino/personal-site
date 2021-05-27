@@ -1,12 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withI18n } from 'react-i18next';
+
 import Table from './Table';
 import data from '../../data/stats/personal';
 
-const PersonalStats = () => (
+const PersonalStats = ({ t }) => (
   <>
-    <h3>Some stats about me</h3>
+    <h3>{t('Some stats about me')}</h3>
     <Table data={data} />
   </>
 );
 
-export default PersonalStats;
+PersonalStats.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+export default withI18n()(PersonalStats);

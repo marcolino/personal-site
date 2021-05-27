@@ -1,17 +1,13 @@
-// import React, { Suspense, lazy } from 'react';
-import React, { Suspense } from 'react';
-import { usePastDelay, lazy } from 'react-lazy-no-flicker';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { withNamespaces } from 'react-i18next'; // the HOC
 import './static/css/main.scss'; // all of our styles
 
 const { PUBLIC_URL } = process.env;
 
-const Loading = () => {
-  const pastDelay = usePastDelay();
-  if (!pastDelay) return null;
-  return null; // <div>Loading ...</div>;
-};
+const Loading = () => ( // TODO ...
+  <></>
+);
 
 // const lazyDelayed = (path, delay = 3000) => (
 //   lazy(() => Promise.all([

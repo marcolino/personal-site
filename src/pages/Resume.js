@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { withI18n } from 'react-i18next';
 
 import Main from '../layouts/Main';
 
@@ -14,40 +16,52 @@ import degrees from '../data/resume/degrees';
 import positions from '../data/resume/positions';
 import { skills, categories } from '../data/resume/skills';
 
-const sections = [
-  'Education',
-  'Experience',
-  'Skills',
-  'Courses',
-  'References',
-];
+const {
+  REACT_APP_MY_NAME,
+  REACT_APP_MY_SURNAME,
+  REACT_APP_MY_RESUME,
+} = process.env;
 
-const Resume = () => (
-  <Main
-    title="Resume"
-    description="Michael D'Angelo's Resume. Arthena, Matroid, YC, Skeptical Investments, Stanford ICME, Planet Labs, and Facebook."
-  >
-    <article className="post" id="resume">
-      <header>
-        <div className="title">
-          <h2 data-testid="heading"><Link to="resume">Resume</Link></h2>
-          <div className="link-container">
-            {sections.map((sec) => (
-              <h4 key={sec}>
-                <a href={`#${sec.toLowerCase()}`}>{sec}</a>
-              </h4>))}
+const Resume = ({ t }) => {
+  const sections = [
+    t('Education'),
+    t('Experience'),
+    t('Skills'),
+    t('Courses'),
+    t('References'),
+  ];
+
+  return (
+    <Main
+      title={t('Resume')}
+      description={`t('{{name}} {{surname}}s resume', ${REACT_APP_MY_NAME}, ${REACT_APP_MY_SURNAME}): ${REACT_APP_MY_RESUME}`}
+    >
+      <article className="post" id="resume">
+        <header>
+          <div className="title">
+            <h2 data-testid="heading"><Link to="resume">{t('Resume')}</Link></h2>
+            <div className="link-container">
+              {sections.map((section) => (
+                <h4 key={section}>
+                  <a href={`#${section.toLowerCase()}`}>{section}</a>
+                </h4>))}
+            </div>
+
           </div>
+        </header>
+        <Education data={degrees} />
+        <Experience data={positions} />
+        <Skills skills={skills} categories={categories} />
+        <Courses data={courses} />
+        <References />
 
-        </div>
-      </header>
-      <Education data={degrees} />
-      <Experience data={positions} />
-      <Skills skills={skills} categories={categories} />
-      <Courses data={courses} />
-      <References />
+      </article>
+    </Main>
+  );
+};
 
-    </article>
-  </Main>
-);
+Resume.propTypes = {
+  t: PropTypes.func.isRequired,
+};
 
-export default Resume;
+export default withI18n()(Resume);

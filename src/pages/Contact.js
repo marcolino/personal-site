@@ -2,11 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { withI18n } from 'react-i18next';
-/* eslint-disable no-unused-vars */
-import i18n from 'i18next';
 
 import Main from '../layouts/Main';
-import EmailLink from '../components/Contact/EmailLink';
+// import EmailLink from '../components/Contact/EmailLink';
 import ContactIcons from '../components/Contact/ContactIcons';
 
 const {
@@ -33,7 +31,7 @@ const Contact = ({ t }) => (
       </header>
       <div className="email-at">
         <p>{t('Feel free to get in touch')}.</p>
-        {t('You can email me at')}: <EmailLink />
+        {t('You can email me at')} <a href={`mailto:{${REACT_APP_MY_EMAIL}`}>{REACT_APP_MY_EMAIL}</a> {/* <EmailLink /> */}
       </div>
       <ContactIcons />
     </article>

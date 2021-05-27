@@ -1,58 +1,60 @@
+import { t } from '../../i18n';
+
 const positions = [
   {
     company: 'Micromegas',
-    position: 'trainee',
-    link: '<missing>',
+    position: t('trainee'),
+    link: '',
     daterange: '1983 - 1985',
     points: [
-      'My first programming experiences on assembler 8080 !',
+      t('My first programming experiences on assembler of 8080!'),
     ],
   },
   {
     company: 'Koinè Sistemi',
-    position: 'Systems manager and Full stack developer',
+    position: t('Systems manager and full stack developer'),
     link: 'rb.gy/f87vmc',
     daterange: '1985 - 2016',
     points: [
-      'Systems analysis, network administration, software development, customers relations.',
+      t('Systems analysis, network administration, software development, customers relations.'),
     ],
   },
   {
-    company: 'Centro Ricerche RAI di Torino',
-    position: 'Consultant',
-    link: '<missing>',
+    company: t('Centro Ricerche RAI in Torino'),
+    position: t('Consultant'),
+    link: '',
     daterange: '2016 - 2018',
     points: [
-      'Collaborated building an electronic stenotypy system for live subtitling of TV broadcasts (Televideo page 777).',
+      t('Collaborated building an electronic stenotypy system for live subtitling of TV broadcasts (Televideo page 777).'),
     ],
   },
   {
     company: 'Provincia di Cuneo',
-    position: 'Consultant',
+    position: t('Consultant'),
     link: 'https://www.provincia.cuneo.gov.it/',
     daterange: '1999 - 2000',
     points: [
-      'Collaborated activating the Data Processing Center.',
+      t('Collaborated activating the Data Processing Center.'),
     ],
   },
   {
     company: 'CIDiS',
-    position: 'Consultant',
+    position: t('Consultant'),
     link: 'https://www.cidis.org/',
     daterange: '2003 - 2006',
     points: [
-      'Collaborated activating the Data Processing Center.',
+      t('Collaborated activating the Data Processing Center.'),
     ],
   },
   {
     company: 'MyPass s.r.l.',
-    position: 'Consultant',
+    position: t('Systemist and developer'),
     link: 'https://mypass.company/',
-    daterange: '2017 - present',
+    daterange: `2017 - ${t('present')}`,
     points: [
-      ' System and network administrator',
-      ' Mobile applications developer using react-native technology, targeting Android and iOS devices',
-      ' Development of a mobile app using react-native for Città di Udine to enable users to park both in structure and on surface, to handle their subscriptions, recharge electric cars, and pay with in-app wallet or credit card.',
+      t('System and network administrator.'),
+      t('Mobile applications developer using react-native technology, targeting Android and iOS devices.'),
+      t('Development of a mobile app using react-native technology for Città di Udine to enable users to park both in structure and on surface, to handle their subscriptions, recharge electric cars, and pay with in-app wallet or credit cards.'),
     ],
   },
 ];

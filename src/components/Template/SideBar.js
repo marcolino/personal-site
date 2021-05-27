@@ -2,21 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withI18n } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import i18n from '../../i18n';
 
 import ContactIcons from '../Contact/ContactIcons';
+import ChangeLanguage from '../Contact/ChangeLanguage';
+import Copyright from '../Contact/Copyright';
 
 const {
   PUBLIC_URL, // set automatically from package.json:homepage
   REACT_APP_MY_NAME,
   REACT_APP_MY_SURNAME,
   REACT_APP_MY_EMAIL,
-  REACT_APP_MY_DOMAIN,
 } = process.env;
-
-const changeLanguage = (lng) => {
-  i18n.changeLanguage(lng);
-};
 
 const SideBar = ({ t }) => (
   <section id="sidebar">
@@ -64,31 +60,11 @@ const SideBar = ({ t }) => (
 
     <section id="footer">
       <ContactIcons />
-      <p className="copyright">
-        <button
-          type="button"
-          style={{
-            fontSize: 13, padding: 0, height: 0, opacity: 0.66,
-          }}
-          alt="use italian language"
-          onClick={() => changeLanguage('it')}
-        >
-          🇮🇹
-        </button>
-        {' '}
-        <button
-          type="button"
-          style={{
-            fontSize: 13, padding: 0, height: 0, opacity: 0.66,
-          }}
-          alt="use english language"
-          onClick={() => changeLanguage('en')}
-        >
-          🇬🇧
-        </button>
-        {' '}
-        &copy; {`${REACT_APP_MY_NAME} ${REACT_APP_MY_SURNAME}`} ~ <Link to="/">{`${REACT_APP_MY_DOMAIN}`}</Link>.
-      </p>
+      <div className="onerow">
+        <ChangeLanguage />
+        &emsp;
+        <Copyright />
+      </div>
     </section>
   </section>
 );
