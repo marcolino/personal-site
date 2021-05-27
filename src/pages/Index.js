@@ -18,7 +18,7 @@ const Index = ({ t }) => (
     <article className="post" id="index">
       <header>
         <div className="title">
-          <h2 data-testid="heading"><Link to="/">{t('Welcome')}</Link></h2>
+          <h2><Link to="/">{t('Welcome')}</Link></h2>
           <p>
             {t('Welcome to my website')}. {' '}
             {t('Please feel free to read more')} <Link to="/about">{t('about me')}</Link>, {' '}
@@ -30,7 +30,7 @@ const Index = ({ t }) => (
           </p>
         </div>
       </header>
-      <h1>{t('About this site')}</h1>
+      <h1 data-testid="heading">{t('About this site')}</h1>
       <p>
         {t('A sleek, responsive, statically-generated react application written with modern Javascript')}.
       </p>
