@@ -18,22 +18,25 @@ const Index = ({ t }) => (
     <article className="post" id="index">
       <header>
         <div className="title">
-          <h2 data-testid="heading"><Link to="/">{t('About this site')}</Link></h2>
+          <h2 data-testid="heading"><Link to="/">{t('Welcome')}</Link></h2>
           <p>
-            {t('A beautiful, responsive, statically-generated, react application written with modern Javascript')}.
+            {t('Welcome to my website')}. {' '}
+            {t('Please feel free to read more')} <Link to="/about">{t('about me')}</Link>, {' '}
+            {t('or check out')} {' '}
+            <Link to="/resume">{t('my curriculum')}</Link>, {' '}
+            <Link to="/projects">{t('my projects')}</Link>, {' '}
+            {t('view')} <Link to="/stats">{t('site statistics')}</Link>, {' '}
+            {t('or')} <Link to="/contact">{t('contact me')}</Link>.
           </p>
         </div>
       </header>
-      <h1>{t('Welcome')}</h1>
-      <p>{t('Welcome to my website')}. {' '}
-        {t('Please feel free to read more')} <Link to="/about">{t('about me')}</Link>, {' '}
-        {t('or check out')} {' '}
-        <Link to="/resume">{t('my curriculum')}</Link>, {' '}
-        <Link to="/projects">{t('my projects')}</Link>, {' '}
-        {t('view')} <Link to="/stats">{t('site statistics')}</Link>, {' '}
-        {t('or')} <Link to="/contact">{t('contact me')}</Link>.
+      <h1>{t('About this site')}</h1>
+      <p>
+        {t('A sleek, responsive, statically-generated react application written with modern Javascript')}.
       </p>
-      <p>{t('Source available')} <a href={REACT_APP_MY_GITHUB_PROJECT_URL}>{t('here')}</a>.</p>
+      <p>
+        {t('Source available')} <a href={REACT_APP_MY_GITHUB_PROJECT_URL}>{t('here')}</a>.
+      </p>
     </article>
   </Main>
 );

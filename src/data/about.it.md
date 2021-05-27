@@ -15,7 +15,7 @@ In MyPass, una start-up con sede a Torino (Italia). La nostra "mission" è reali
 - I podcasts
 - Il buon design
 - La fotografia
-- La rimavera
+- La primavera
 # Viaggi / Geografia
 
 - Sono originario di Torino. Da allora ho vissuto a La Spezia, Pisa e Portovenere, e ancora Torino.

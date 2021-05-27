@@ -1,9 +1,11 @@
 import React, { useState, useCallback, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { withI18n } from 'react-i18next';
 
 import Table from './Table';
 import initialData from '../../data/stats/site';
 
-const Stats = () => {
+const Stats = ({ t }) => {
   const [data, setResponseData] = useState(initialData);
   // TODO think about persisting this somewhere
   const fetchData = useCallback(async () => {
@@ -29,10 +31,14 @@ const Stats = () => {
 
   return (
     <div>
-      <h3>Some stats about this site</h3>
+      <h3>{t('Some stats about this site')}</h3>
       <Table data={data} />
     </div>
   );
 };
 
-export default Stats;
+Stats.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+export default withI18n()(Stats);

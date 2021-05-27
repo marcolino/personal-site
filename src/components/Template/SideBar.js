@@ -45,7 +45,7 @@ const SideBar = ({ t }) => (
         {' '}
         {t('when starting my work career')}, {t('I did collaborate with')} Micromegas {t('in Pisa')}.
         <br />
-        {t('I love running, playing football, sailing, snorkeling, bird-watching, cinema and reading paper books')}.
+        {t('I love running, playing football, sailing, snorkeling, bird-watching, cinema and reading (paper) books')}.
         <br />
         {t('I love with my whole heart a woman')}.
         {' '}

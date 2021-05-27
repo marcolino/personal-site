@@ -22,7 +22,7 @@ const Projects = ({ t }) => (
       <header>
         <div className="title">
           <h2 data-testid="heading"><Link to="/projects">{t('Projects')}</Link></h2>
-          <p>{t('A selection of projects that I\'m not too ashamed of')}</p>
+          <p>{t('A selection of recent projects that I\'m not too ashamed of')}</p>
         </div>
       </header>
       {data.map((project) => (
