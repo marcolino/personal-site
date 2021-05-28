@@ -1,6 +1,8 @@
 # Roadmap
 
-This site has been a work in progress since 2014. I have tried to make updates to reflect a) my knowledge of web development and b) current best practices. It will continue to evolve a as a WIP guided by the following design goals.
+This site has been a work in progress since 2014.
+I have tried to make updates to reflect a) my knowledge of web development and b) current best practices.
+It will continue to evolve a as a WIP guided by the following design goals.
 
 ## Future Direction
 
@@ -25,22 +27,17 @@ This site has been a work in progress since 2014. I have tried to make updates t
 
 - Completely gut and redo server integration, use JWT
   - auto deploy backend, keep frontend on CDN.
-- revisit posts/blog
+- Revisit posts/blog
   - put one or two examples up from my knowledge base.
-
-- put all images in one folder, if possible (now we have /src/static/images/ and /public/images/)
-- review home page structure ("About this web site" in the first foreground?)
-- make a script to build icons (icon.png => favicon.ico, apple-touch-icon.png, icon-192.png, icon-512.png, icon.svg)
 
 ### Repository Cleanup
 
 - Don't allow pushes to main.
 - Generate releases using github action (increment version in package.json too) using semantic versioning.
 - Add contributing guidelines.
-- encourage more PRs that support this roadmap / pay bug bounties.
+- Encourage more PRs that support this roadmap / pay bug bounties.
 - Build something that allows people to propose changes.
 - Make main / server distinction cleaner -> make sure PRs to main also land in server.
-
 - Implement better analytics
 - Capture information about the community of people that have cloned this site.
 
@@ -48,5 +45,5 @@ This site has been a work in progress since 2014. I have tried to make updates t
 
 - Use typescript everywhere instead of Vanilla JS/JSX - will this hinder new developer experience?
 - Add support for more exotic integrations (reason, webassembly).
-- hydrate all unique content on the site from one location -> deploy as npm package + json.
+- Hydrate all unique content on the site from one location -> deploy as npm package + json.
 - Use husky for git pre-commit hooks.
