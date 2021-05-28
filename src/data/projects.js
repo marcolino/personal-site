@@ -8,7 +8,7 @@ const data = [
     date: `${t('March')} 2021`,
     desc:
       t('A service to let people receive more timely, compact and'
-      + 'ads free notices about new rental / sale offers for a'
+      + 'ads free notices about new rental/sale offers for a'
       + 'specific real-estate search. The service is based on'
       + 'italian real-estate main source, immobiliare.it,'
       + 'and is hosted on AWS.'),
