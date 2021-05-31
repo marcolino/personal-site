@@ -1,6 +1,6 @@
 {
   "name": "personal-site",
-  "version": "4.0.31",
+  "version": "4.0.32",
   "homepage": "https://sistemisolari.com/",
   "license": "MIT",
   "repository": {
@@ -17,10 +17,10 @@
     "test": "react-scripts test --watchAll=false",
     "analyze": "npm run build && source-map-explorer build/static/js/*.chunk.js",
     "noJekill4Github": "> public/.nojekyll",
-    "predeploy": "npm run build && react-snap",
+    "predeploy": "npm run build && react-snap # be careful: react-snap ^1.23.0 has problems crawling 404 page...",
     "deploy2github": "gh-pages -d build",
     "deploy2aws": "aws s3 sync build/ s3://www.sistemisolari.com --delete && DISTRIBUTION_ID='E522KCR18NZRZ'; aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'",
-    "deploy": "yarn test && yarn i18nParse && yarn i18nTranslate && yarn build && yarn deploy2aws"
+    "all": "yarn test && yarn i18nParse && yarn i18nTranslate && yarn build && yarn deploy2aws"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
