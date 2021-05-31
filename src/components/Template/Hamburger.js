@@ -3,7 +3,7 @@ import React, { Suspense, lazy, useState } from 'react';
 import { Link } from 'react-router-dom';
 import routes from '../../data/routes';
 
-const Menu = lazy(() => import('react-burger-menu/lib/menus/slide'));
+const Menu = lazy(() => import('react-burger-menu/lib/menus/fallDown'));
 
 const Hamburger = () => {
   const [open, setOpen] = useState(false);
@@ -24,7 +24,7 @@ const Hamburger = () => {
         </ul>
       </nav>
       <Suspense fallback={<></>}>
-        <Menu right isOpen={open}>
+        <Menu right isOpen={open} disableAutoFocus>
           <ul className="hamburger-ul">
             {routes.map((l) => (
               <li key={l.label}>
