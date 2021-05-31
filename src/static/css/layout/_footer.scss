@@ -31,14 +31,19 @@
 			padding: 0;
 		}
 
-		.copyright {
+		.copyright, .version{
 			color: _palette(fg-not-so-light);
 			font-family: _font(family-heading);
 			font-size: 0.75em;
 			font-weight: _font(weight-heading);
 			letter-spacing: _font(kerning-heading);
 			text-transform: uppercase;
+			padding-top: 8px;
+		}
+		.version{
 			padding-top: 7px;
+			color: #222;
+			text-transform: none;
 		}
 
 		body.single & {

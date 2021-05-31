@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import ContactIcons from '../Contact/ContactIcons';
 import ChangeLanguage from '../Contact/ChangeLanguage';
 import Copyright from '../Contact/Copyright';
+import Version from '../Contact/Version';
 
 const {
   PUBLIC_URL, // set automatically from package.json:homepage
@@ -64,6 +65,8 @@ const SideBar = ({ t }) => (
         <ChangeLanguage />
         &emsp;
         <Copyright />
+        &emsp;
+        <Version />
       </div>
     </section>
   </section>
