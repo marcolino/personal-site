@@ -63,9 +63,9 @@ const SideBar = ({ t }) => (
       <ContactIcons />
       <div className="onerow">
         <ChangeLanguage />
-        &emsp;
+        &nbsp;&nbsp;
         <Copyright />
-        &emsp;
+        &nbsp;&nbsp;
         <Version />
       </div>
     </section>

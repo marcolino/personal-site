@@ -28,7 +28,8 @@
 		weight-heading:				400,
 		weight-heading-bold:		800,
 		weight-heading-extrabold:	900,
-		kerning-heading:			0.20em
+		kerning-heading:			0.20em,
+		kerning-compact:      0.02em
 	);
 
 // Palette.
@@ -38,7 +39,7 @@
 		fg:							#646464,
 		fg-bold:					#3c3b3b,
 		fg-light:					#aaaaaa,
-		fg-not-so-light:		    #848484,
+		fg-not-so-light:		    #646464,
 		border:						rgba(160,160,160,0.3),
 		border-bg:					rgba(160,160,160,0.075),
 		border-alt:					rgba(160,160,160,0.65),
