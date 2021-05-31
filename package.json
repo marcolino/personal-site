@@ -1,6 +1,6 @@
 {
   "name": "personal-site",
-  "version": "4.0.28",
+  "version": "4.0.29",
   "homepage": "https://sistemisolari.com/",
   "license": "MIT",
   "repository": {
@@ -12,15 +12,15 @@
     "build": "react-scripts build",
     "i18nParse": "scripts/i18next-parse.sh",
     "i18nTranslate": "scripts/i18next-translate.sh",
-    "predeploy": "npm run build && react-snap",
-    "deploy2github": "gh-pages -d build",
-    "deploy2aws": "aws s3 sync build/ s3://www.sistemisolari.com --delete && DISTRIBUTION_ID='E522KCR18NZRZ'; aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'",
     "start": "react-scripts start",
     "lint": "eslint src",
     "test": "react-scripts test --watchAll=false",
     "analyze": "npm run build && source-map-explorer build/static/js/*.chunk.js",
     "noJekill4Github": "> public/.nojekyll",
-    "full": "yarn test && yarn i18nParse && yarn i18nTranslate && yarn build && yarn deploy2aws"
+    "predeploy": "npm run build && react-snap",
+    "deploy2github": "gh-pages -d build",
+    "deploy2aws": "aws s3 sync build/ s3://www.sistemisolari.com --delete && DISTRIBUTION_ID='E522KCR18NZRZ'; aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'",
+    "deploy": "yarn test && yarn i18nParse && yarn i18nTranslate && yarn build && yarn deploy2aws"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
