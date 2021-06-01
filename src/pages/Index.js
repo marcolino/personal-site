@@ -22,7 +22,7 @@ const Index = ({ t }) => (
           <p>
             {t('Welcome to my website')}. {' '}
             {t('Please feel free to read more')} <Link to="/about">{t('about me')}</Link>, {' '}
-            {t('or check out')} {' '}
+            {t('or check out')} {': '}
             <Link to="/resume">{t('my curriculum')}</Link>, {' '}
             <Link to="/projects">{t('my projects')}</Link>, {' '}
             {t('view')} <Link to="/stats">{t('site statistics')}</Link>, {' '}
