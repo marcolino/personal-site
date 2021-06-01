@@ -34,11 +34,11 @@
 		.copyright, .version{
 			color: _palette(fg-not-so-light);
 			font-family: _font(family-heading);
-			font-size: 0.75em;
+			font-size: 0.70em;
 			font-weight: _font(weight-heading);
 			letter-spacing: _font(kerning-heading);
 			text-transform: uppercase;
-			padding-top: 8px;
+			padding-top: 7px;
 		}
 		.version{
 			letter-spacing: _font(kerning-compact);
