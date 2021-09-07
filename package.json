@@ -1,6 +1,6 @@
 {
   "name": "personal-site",
-  "version": "4.0.39",
+  "version": "4.0.40",
   "homepage": "https://sistemisolari.com/",
   "license": "MIT",
   "repository": {
@@ -17,10 +17,11 @@
     "test": "react-scripts test --watchAll=false",
     "analyze": "npm run build && source-map-explorer build/static/js/*.chunk.js",
     "noJekill4Github": "> public/.nojekyll",
+    "newEvent": "scripts/new-event.js --imagesFolder='/home/marco/Desktop/Festona' --eventLabel='Festa fine 20 anni Marco' --eventDate='1991-08-31'",
     "predeploy": "npm run build && react-snap # be careful: react-snap ^1.23.0 has problems crawling 404 page...",
     "deploy2github": "gh-pages -d build",
     "deploy2aws": "aws s3 sync build/ s3://www.sistemisolari.com --delete && DISTRIBUTION_ID='E522KCR18NZRZ'; aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'",
-    "all": "yarn test && yarn i18nParse && yarn i18nTranslate && yarn build && yarn deploy2aws"
+    "all": "yarn lint && yarn test && yarn i18nParse && yarn i18nTranslate && yarn build && yarn deploy2aws"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
@@ -40,7 +41,11 @@
     "react-ga": "^3.3.0",
     "react-helmet-async": "^1.0.7",
     "react-i18next": "^9.0.10",
+    "react-image-gallery": "^1.2.7",
+    "react-images": "1.1.0",
     "react-markdown": "^5.0.3",
+    "react-modal": "^3.14.3",
+    "react-photo-gallery": "^8.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
     "react-snap": "^1.23.0",
@@ -54,6 +59,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "^7.22.0",
+    "image-size": "^1.0.0",
     "source-map-explorer": "^2.5.2"
   },
   "browserslist": {
