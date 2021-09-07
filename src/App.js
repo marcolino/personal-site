@@ -19,13 +19,14 @@ const Loading = () => ( // TODO ...
 // Every route - we lazy load so that each page can be chunked
 // NOTE that some of these chunks are very small. We should optimize
 // which pages are lazy loaded in the future.
-const About = lazy(() => import('./pages/About'));
-const Contact = lazy(() => import('./pages/Contact'));
 const Index = lazy(() => import('./pages/Index'));
-const NotFound = lazy(() => import('./pages/NotFound'));
-const Projects = lazy(() => import('./pages/Projects'));
+const About = lazy(() => import('./pages/About'));
 const Resume = lazy(() => import('./pages/Resume'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Contact = lazy(() => import('./pages/Contact'));
 const Stats = lazy(() => import('./pages/Stats'));
+const Events = lazy(() => import('./pages/Events'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const App = () => (
   <Suspense fallback={<Loading />}>
@@ -33,10 +34,11 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Index} />
         <Route path="/about" component={About} />
-        <Route path="/projects" component={Projects} />
-        <Route path="/stats" component={Stats} />
-        <Route path="/contact" component={Contact} />
         <Route path="/resume" component={Resume} />
+        <Route path="/projects" component={Projects} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/stats" component={Stats} />
+        <Route path="/events" component={Events} />
         <Route component={NotFound} status={404} />
       </Switch>
     </BrowserRouter>

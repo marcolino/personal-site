@@ -1,4 +1,4 @@
-import i18n from '../i18n';
+import { t } from '../i18n';
 
 const {
   REACT_APP_MY_NAME,
@@ -12,23 +12,27 @@ const routes = [
     path: '/',
   },
   {
-    label: i18n.t('About'),
+    label: t('About'),
     path: '/about',
   },
   {
-    label: i18n.t('Resume'),
+    label: t('Resume'),
     path: '/resume',
   },
   {
-    label: i18n.t('Projects'),
+    label: t('Projects'),
     path: '/projects',
   },
   {
-    label: i18n.t('Stats'),
+    label: t('Stats'),
     path: '/stats',
   },
   {
-    label: i18n.t('Contact'),
+    label: t('Events'),
+    path: '/events',
+  },
+  {
+    label: t('Contact'),
     path: '/contact',
   },
 ];
